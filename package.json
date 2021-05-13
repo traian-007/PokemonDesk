@@ -1,0 +1,30 @@
+{
+  "name": "PokemonDesk",
+  "version": "1.0.0",
+  "scripts": {
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server"
+  },
+  "repository": "https://github.com/traian-007/PokemonDesk.git",
+  "author": "traian-007 <72014521+traian-007@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "5.0.0",
+    "html-webpack-plugin": "4.5.0",
+    "sass": "1.32.12",
+    "sass-loader": "10.0.4",
+    "style-loader": "2.0.0",
+    "ts-loader": "8.2.0",
+    "typescript": "4.0.3",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}
