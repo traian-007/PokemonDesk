@@ -6,7 +6,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']  //extention with we can work
     },
     mode: NODE_ENV ? NODE_ENV : 'development',
-    entry: path.resolve(__dirname, 'src/index.js'),//entry point
+    entry: path.resolve(__dirname, 'src/index.ts'),//entry point
     output: {                                     //where we will put fails
         path: path.resolve(__dirname, 'dist'), //path
         filename: 'main.js',                  //name of bundle
@@ -15,19 +15,25 @@ module.exports = {
         rules: [
             {
                 test: /\.[tj]sx?$/,     //extension(jsx,ts,sx)
+                exclude: /node_modules/,
                 use: ['ts-loader']       //loader
             },
             {
-                test: /\.(s*)css$/,
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.scss$/,
                 use: [
                     'style-loader',
+                    'css-modules-typescript-loader?modules',
                     {
                         loader: 'css-loader',
                         options: {
                             modules: {
                                 mode: 'local',
                                 localIdentName: '[name]__[local]__[hash:base64:5]',
-                                auto: /\.modules\.\w+$/i,
+                                auto: /\.module\.\w+$/i,
                             }
                         }
                     },
