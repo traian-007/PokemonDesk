@@ -1,0 +1,41 @@
+@import '../../variables';
+.root b {
+  font-weight: 900;
+}
+.root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+.title {
+  font-size: 72px;
+  line-height: 84px;
+  letter-spacing: 4px;
+}
+.describe {
+  font-size: 36px;
+  line-height: 42px;
+}
+.contentWrap {
+  display: flex;
+  position: relative;
+}
+.contentText {
+  width: 515px;
+}
+.contentParallax {
+  position: absolute;
+  right: -11.98%;
+  top: 5.95%;
+  bottom: -5.67%;
+}
+.love {
+  font-size: 24px;
+  line-height: 28px;
+  position: absolute;
+  bottom: -120px;
+  right: -150px;
+  padding: 10px;
+}
+.love span {
+  color: red;
+}
