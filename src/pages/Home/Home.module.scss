@@ -12,28 +12,32 @@
   letter-spacing: 4px;
 }
 .describe {
+  width: 500px;
   font-size: 36px;
   line-height: 42px;
 }
 .contentWrap {
+  width: 100%;
   display: flex;
   position: relative;
+  padding-left: 157px;
+  padding-right: 157px;
 }
 .contentText {
-  width: 515px;
+  width: 100%;
 }
 .contentParallax {
-  position: absolute;
-  right: -11.98%;
-  top: 5.95%;
-  bottom: -5.67%;
+  // width: 750px;
+  right: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .love {
   font-size: 24px;
   line-height: 28px;
   position: absolute;
-  bottom: -120px;
-  right: -150px;
+  bottom: 0;
+  right: 0;
   padding: 10px;
 }
 .love span {

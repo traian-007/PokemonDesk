@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.pokemons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 35px;
+  grid-row-gap: 35px;
+}
+
+.titleSearch {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.titleSearch span {
+  font-weight: 700;
+}
+.search {
+  width: 1088px;
+  height: 53px;
+  background: #f2f2f2;
+  box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+  border-radius: 40px;
+  margin-bottom: 110px;
+}
+.search .placehold {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 31px;
+  padding-bottom: 2px;
+  opacity: 0.9;
+}

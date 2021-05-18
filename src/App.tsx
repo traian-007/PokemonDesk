@@ -1,9 +1,11 @@
 import React from 'react';
-// import s from './App.module.scss';
-import HomePage from './pages/Home';
+import { useRoutes } from 'hookrouter';
+import NotFound from './pages/NotFound';
+import routers from './routers';
 
 const App = () => {
-  return <HomePage />;
+  const match = useRoutes(routers);
+  return match || <NotFound />;
 };
 
 export default App;
