@@ -15,6 +15,8 @@ module.exports = {
   rules: {
     'object-shorthand': 0,
     'react/pro-types': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': 'error',
     'no-console': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }],
