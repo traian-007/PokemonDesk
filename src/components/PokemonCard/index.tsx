@@ -4,7 +4,8 @@ import Heading from '../Heading';
 import s from './PokemonCard.module.scss';
 
 interface IPStats {
-  [n: string]: string | number;
+  attack: number;
+  defense: number;
 }
 
 interface IPokemonsCard {

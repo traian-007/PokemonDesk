@@ -2,7 +2,6 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 import { LinkEnum } from '../../routers';
 import Button from '../../components/Button';
-import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import Parallax from './components/Parallax';
@@ -11,7 +10,6 @@ import s from './Home.module.scss';
 const HomePage = () => {
   return (
     <div className={s.root}>
-      <Header />
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
           <Heading size={72} className={s.title}>
