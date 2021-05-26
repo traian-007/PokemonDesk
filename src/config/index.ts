@@ -7,7 +7,7 @@ export interface IEndPoint {
 }
 export interface IUriEndPoint {
   method: string;
-  uri: { pathname: string };
+  uri: any;
 }
 
 interface IClient {
@@ -18,18 +18,28 @@ interface IClient {
 export interface IConfig {
   client: IClient;
 }
-
+const query = {
+  name: '',
+  id: 2,
+};
 export const config: IConfig = {
   client: {
     server: {
       protocol: 'http',
       host: 'zar.hosthot.ru',
     },
+
     endpoint: {
       getPokemons: {
         method: 'GET',
         uri: {
           pathname: '/api/v1/pokemons',
+        },
+      },
+      getPokemonsById: {
+        method: 'GET',
+        uri: {
+          pathname: `/api/v1/pokemon/${query.id}`,
         },
       },
     },
