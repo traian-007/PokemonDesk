@@ -13,6 +13,8 @@ interface IPokemonsCard {
   img: string;
   types: string[];
   stats: IPStats;
+  // id: number;
+  // onClick: (id: number) => void
 }
 
 const PokemonCard = ({ name, stats, types, img }: IPokemonsCard) => {
