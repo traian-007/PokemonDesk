@@ -51,7 +51,7 @@ const PokedexPage = () => {
 
   return (
     <Layout className={s.root}>
-      <Heading size={36} className={s.titleSearch}>
+      <Heading size="h3" className={s.titleSearch}>
         {!isLoading && data && data.total}
         <span> Pokemons </span>for You to choose your favorite
       </Heading>

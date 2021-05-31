@@ -21,7 +21,7 @@ const PokemonCard = ({ name, stats, types, img }: IPokemonsCard) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
-        <Heading size={24} className={s.titleName}>
+        <Heading size="h4" className={s.titleName}>
           {name}
         </Heading>
         <div className={s.statWrap}>
