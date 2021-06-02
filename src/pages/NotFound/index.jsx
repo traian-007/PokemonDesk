@@ -2,8 +2,8 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 import { LinkEnum } from '../../routers';
 import Button from '../../components/Button';
-import TeamRocket from './assets/Team_Rocket.png';
 import s from './NotFound.module.scss';
+import TeamRocket from './assets/Team_Rocket.png';
 
 const NotFound = () => {
   return (

@@ -1,4 +1,9 @@
 node_modules/
 .idea/
-dist/
+dist/fonts
+dist/main.js
+dist/main.js.map
+dist/server.js
 src/**.d.ts
+coverage/
+.coverage-final.json

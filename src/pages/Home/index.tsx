@@ -12,10 +12,10 @@ const HomePage = () => {
     <div className={s.root}>
       <Layout className={s.contentWrap}>
         <div className={s.contentText}>
-          <Heading size={72} className={s.title}>
+          <Heading size="h1" className={s.title}>
             <b>Find</b> all your favorite <b>Pokemons</b>
           </Heading>
-          <Heading size={16} className={s.describe}>
+          <Heading size="h5" className={s.describe}>
             You can know the type of Pokemon, its strengths, disadvantages and abilities
           </Heading>
           <Button onClick={() => navigate(LinkEnum.POKEDEX)} color="#73D677" width="231px" size="big">
@@ -34,7 +34,7 @@ const HomePage = () => {
         <div className={s.contentParallax}>
           <Parallax />
         </div>
-        <Heading size={16} className={s.love}>
+        <Heading size="h5" className={s.love}>
           Make with love <span>&#x2764;</span>
         </Heading>
       </Layout>

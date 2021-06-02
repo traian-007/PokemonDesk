@@ -1,8 +1,23 @@
-import url from 'url';
-import getUrlWithParamsConfig from '../config/getUrlWithParamsConfig';
+import Url from 'url';
+import getUrlWithParamsConfig from './getUrlWithParamsConfig';
+
+interface IOptions {
+  method: string;
+  body?: string;
+}
+
+interface IGetUrlWithParamsConfig {
+  method: string;
+  uri: Partial<URL>;
+  body: object;
+}
 
 async function req<T>(endpoint: string, query: object): Promise<T> {
-  const uri = url.format(getUrlWithParamsConfig(endpoint, query));
+  const { method, uri, body }: IGetUrlWithParamsConfig = getUrlWithParamsConfig(endpoint, query);
+  // const uri = url.format(getUrlWithParamsConfig(endpoint, query));
+  const options: IOptions = {
+    method,
+  };
   // const uri = url.format({
   //     protocol: 'https',
   //     host: 'zarmarathon.com',
@@ -10,7 +25,12 @@ async function req<T>(endpoint: string, query: object): Promise<T> {
   //         name: 'Zar'
   //     }
   // })
-  const respons = await fetch(uri).then((res) => res.json());
+
+  if (Object.keys(body).length > 0) {
+    options.body = JSON.stringify(body);
+  }
+  console.log(Url.format(uri));
+  const respons = await fetch(Url.format(uri), options).then((res) => res.json());
   return respons;
 }
 

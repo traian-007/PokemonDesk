@@ -18,10 +18,7 @@ interface IClient {
 export interface IConfig {
   client: IClient;
 }
-const query = {
-  name: '',
-  id: 2,
-};
+
 export const config: IConfig = {
   client: {
     server: {
@@ -36,10 +33,35 @@ export const config: IConfig = {
           pathname: '/api/v1/pokemons',
         },
       },
-      getPokemonsById: {
+      getPokemon: {
         method: 'GET',
         uri: {
-          pathname: `/api/v1/pokemon/${query.id}`,
+          pathname: '/api/v1/pokemon/{id}',
+        },
+      },
+      getPokemon2: {
+        method: 'GET',
+        uri: {
+          pathname: '/api/v1/pokemons',
+        },
+      },
+      // Fake API
+      createPokemon: {
+        method: 'POST',
+        uri: {
+          pathname: '/api/v1/pokemon/create',
+        },
+      },
+      updatePokemon: {
+        method: 'PATCH',
+        uri: {
+          pathname: '/api/v1/pokemon/{id}',
+        },
+      },
+      deletePokemon: {
+        method: 'DELETE',
+        uri: {
+          pathname: '/api/v1/pokemon/{id}/delete',
         },
       },
     },
