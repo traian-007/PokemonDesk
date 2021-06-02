@@ -25,9 +25,11 @@ async function req<T>(endpoint: string, query: object): Promise<T> {
   //         name: 'Zar'
   //     }
   // })
+
   if (Object.keys(body).length > 0) {
     options.body = JSON.stringify(body);
   }
+  console.log(Url.format(uri));
   const respons = await fetch(Url.format(uri), options).then((res) => res.json());
   return respons;
 }

@@ -39,6 +39,12 @@ export const config: IConfig = {
           pathname: '/api/v1/pokemon/{id}',
         },
       },
+      getPokemon2: {
+        method: 'GET',
+        uri: {
+          pathname: '/api/v1/pokemons',
+        },
+      },
       // Fake API
       createPokemon: {
         method: 'POST',
