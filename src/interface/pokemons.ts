@@ -26,4 +26,6 @@ const pokemonsData = {
 };
 // onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 
+export type ITypesRequest = string[];
+
 export type PokemonsRequest = typeof pokemonsData;

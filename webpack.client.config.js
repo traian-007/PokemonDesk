@@ -6,7 +6,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'], //extention with we can work
   },
   mode: NODE_ENV ? NODE_ENV : 'development',
-  entry: path.resolve(__dirname, 'src/index.ts'), //entry point
+  entry: path.resolve(__dirname, 'src/index.tsx'), //entry point
   output: {
     //where we will put fails
     path: path.resolve(__dirname, 'dist'), //path

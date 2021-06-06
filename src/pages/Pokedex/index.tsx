@@ -1,5 +1,6 @@
 import { A } from 'hookrouter';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
@@ -7,6 +8,7 @@ import useData from '../../hook/getData';
 import useDebounce from '../../hook/useDebounce';
 import { Ipokemons, PokemonsRequest } from '../../interface/pokemons';
 import { LinkEnum } from '../../routers';
+import { getPokemonTypes, getPokemonTypesLoading, getTypesAction } from '../../store/pokemon';
 // import { LinkEnum } from '../../routers';
 // import { SECOND_ROUTER } from '../../routers';
 import s from './Pokedex.module.scss';
@@ -16,6 +18,10 @@ export interface IQuery {
 }
 
 const PokedexPage = () => {
+  const dispatch = useDispatch();
+  const typesPokemons = useSelector(getPokemonTypes);
+  const isTypingLoading = useSelector(getPokemonTypesLoading);
+
   const [searchValue, setSearchValue] = useState('');
   const [searchValue2, setSearchValue2] = useState('');
   const [searchValue3, setSearchValue3] = useState('');
@@ -35,6 +41,9 @@ const PokedexPage = () => {
     debouncedValue2,
     debouncedValue3,
   ]);
+  useEffect(() => {
+    dispatch(getTypesAction());
+  }, []);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -42,7 +51,6 @@ const PokedexPage = () => {
       ...state,
       name: e.target.value,
     }));
-    console.log(query);
   };
   const getValueOfFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFiltr(e.target.value);
@@ -85,6 +93,13 @@ const PokedexPage = () => {
 
       <div className={s.search}>
         <input className={s.placehold} type="text" value={searchValue} onChange={handleSearchChange} />
+      </div>
+      <div>
+        {isTypingLoading ? (
+          <div> is Loading</div>
+        ) : (
+          typesPokemons?.map((item) => <div key={item.toString()}>{item}</div>)
+        )}
       </div>
       <div className={s.inputs}>
         <select name="type" id="select_type">
